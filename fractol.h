@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/25 17:58:25 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/25 18:25:02 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ typedef struct s_fractol
 	double	julia_imaginary;
 }			t_fractol;
 
+void	instruction(void);
+void	malloc_error(void);
 
 #endif
