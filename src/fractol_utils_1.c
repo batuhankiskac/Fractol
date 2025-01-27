@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_utils.c                                    :+:      :+:    :+:   */
+/*   fractol_utils_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 16:41:33 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/27 17:19:01 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,22 @@ double	ft_atod(char *s)
 		fractional = fractional + (*s++ - '0') * power;
 	}
 	return ((integral + fractional) * sign);
+}
+
+t_fractal	square_complex(t_fractal z)
+{
+	t_fractal	res;
+
+	res.compl_real = (z.compl_real * z.compl_real) - (z.compl_i * z.compl_i);
+	res.compl_i = 2 * z.compl_real * z.compl_i;
+	return (res);
+}
+
+t_fractal	sum_complex(t_fractal z1, t_fractal z2)
+{
+	t_fractal	res;
+	
+	res.compl_real = z1.compl_real + z2.compl_real;
+	res.compl_i = z1.compl_i + z2.compl_i;
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 16:26:22 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/27 17:22:42 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ typedef struct s_fractal
 	int		img_endian;
 	int		iterations;
 	int		color;
-	double	complex_real;
-	double	complex_i;
+	double	compl_real;
+	double	compl_i;
 	double	hypotenuse;
 	double	shift_real;
 	double	shift_i;
@@ -73,11 +73,17 @@ typedef struct s_fractal
 	double	julia_i;
 }			t_fractal;
 
+t_fractal	square_complex(t_fractal z);
+t_fractal	sum_complex(t_fractal z1, t_fractal z2);
 void	instruction(void);
 void	malloc_error(void);
 void	fractol_init(t_fractal *fractal);
+void	zoom_in(t_fractal *fract, double mouse_real, double mouse_i);
+void	zoom_out(t_fractal *fract, double mouse_real, double mouse_i);
 int		handle_close(t_fractal *fractal);
 int		handle_key(int keysym, t_fractal *fractal);
 int		handle_mouse(int button, int x, int y, t_fractal *fractal);
+double	ft_atod(char *s);
+double	map(t_map coords);
 
 #endif
