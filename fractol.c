@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:59:50 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 15:49:40 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/27 20:07:35 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
 	{
 		instruction();
 		argv[1][0] = ft_toupper(argv[1][0]);
-		fractal.title = ft_strjoin("Fractol - ", argv[1]);
-		if (!ft_strncmp(fractal.title, "Fractol - Julia", 15))
+		fractal.title = argv[1];
+		if (!ft_strncmp(fractal.title, "Julia", 15))
 		{
 			fractal.julia_real = ft_atod(argv[2]);
 			fractal.julia_i = ft_atod(argv[3]);
