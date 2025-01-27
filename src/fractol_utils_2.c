@@ -1,32 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_events.c                                   :+:      :+:    :+:   */
+/*   fractol_utils_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 18:30:17 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 16:25:54 by bkiskac          ###   ########.fr       */
+/*   Created: 2025/01/27 16:47:40 by bkiskac           #+#    #+#             */
+/*   Updated: 2025/01/27 16:48:06 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
-
-int	handle_key(int keysym, t_fractal *fractal)
-{
-
-}
-
-int	handle_mouse(int button, int x, int y, t_fractal *fractal)
-{
-	
-}
-
-int	handle_close(t_fractal *fractal)
-{
-	mlx_destroy_image(fractal->mlx, fractal->img);
-	mlx_destroy_window(fractal->mlx, fractal->win);
-	mlx_destroy_display(fractal->mlx);
-	free(fractal->mlx);
-	exit(EXIT_SUCCESS);
-}

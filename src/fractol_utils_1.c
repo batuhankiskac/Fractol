@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/25 18:18:49 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/27 16:41:33 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,32 @@ void	malloc_error(void)
 {
 	perror("Malloc Error: ");
 	exit(EXIT_FAILURE);
+}
+
+double	ft_atod(char *s)
+{
+	long	integral;
+	double	fractional;
+	double	power;
+	int		sign;
+
+	integral = 0;
+	fractional = 0.0;
+	sign = 1;
+	power = 1.0;
+	while (*s == '0' || (*s >= 9) && (*s <= 12))
+		*s++;
+	while (*s == '+' || *s == '-')
+		if (*s == '-')
+			sign *= -1;
+	while (*s && *s != '.')
+		integral = integral * 10 + (*s++ - '0');
+	if (*s == '.')
+		*s++;
+	while (*s)
+	{
+		power /= 10;
+		fractional = fractional + (*s++ - '0') * power;
+	}
+	return ((integral + fractional) * sign);
 }
