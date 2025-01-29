@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 20:25:05 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/29 12:44:24 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,9 @@ t_fractal	sum_complex(t_fractal z1, t_fractal z2);
 void	instruction(void);
 void	malloc_error(void);
 void	fractol_init(t_fractal *fractal);
+void	fractol_render(t_fractal *fractal);
 void	zoom_in(t_fractal *fract, double mouse_real, double mouse_i);
 void	zoom_out(t_fractal *fract, double mouse_real, double mouse_i);
-void	fractol_render(t_fractal *fractal);
 int		handle_close(t_fractal *fractal);
 int		handle_key(int keysym, t_fractal *fractal);
 int		handle_mouse(int button, int x, int y, t_fractal *fractal);
