@@ -6,15 +6,15 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/29 12:44:24 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/29 13:06:23 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include "libft/libft.h"
+# include "mlx/mlx.h"
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
