@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:22:00 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/29 12:42:59 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/30 11:45:42 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_pixel_put(int x, int y, t_fractal *fract, int rgb)
 	int	offset;
 
 	offset = y * fract->img_line + x * (fract->img_bpp / 8);
-	rgb = *(unsigned int *)(fract->img + offset);
+	rgb = *(unsigned int *)(fract->addr + offset);
 }
 
 static void	get_complex_map(int x, int y, t_fractal *fract)

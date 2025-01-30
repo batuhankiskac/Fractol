@@ -6,7 +6,7 @@
 #    By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 17:58:52 by bkiskac           #+#    #+#              #
-#    Updated: 2025/01/29 12:57:18 by bkiskac          ###   ########.fr        #
+#    Updated: 2025/01/30 11:40:58 by bkiskac          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = fractol.c \
 	src/fractol_init.c \
 	src/fractol_render.c \
 	src/fractol_utils_1.c \
-	src/fractol_utils_2.c \
+	src/fractol_utils_2.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -31,7 +31,8 @@ LIBFT = libft/libft.a
 MLX = mlx/libmlx.a
 
 all: $(NAME)
-	$(NAME): $(OBJS) $(LIBFT) $(MLX)
+
+$(NAME): $(OBJS) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(MLX)
 
 $(LIBFT):

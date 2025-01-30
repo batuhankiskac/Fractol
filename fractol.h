@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/29 13:06:23 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/30 11:36:20 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	fractol_init(t_fractal *fractal);
 void	fractol_render(t_fractal *fractal);
 void	zoom_in(t_fractal *fract, double mouse_real, double mouse_i);
 void	zoom_out(t_fractal *fract, double mouse_real, double mouse_i);
+void	color_shift(t_fractal *fractal);
+int		blend_colors(int color1, int color2, double t);
 int		handle_close(t_fractal *fractal);
 int		handle_key(int keysym, t_fractal *fractal);
 int		handle_mouse(int button, int x, int y, t_fractal *fractal);
