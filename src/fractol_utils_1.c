@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 16:42:18 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 17:34:22 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,30 @@ void	malloc_error(void)
 
 double	ft_atod(char *s)
 {
-	double sign = 1.0;
-	double result = 0.0;
-	double fraction = 0.0;
-	double divisor = 1.0;
+	long	integral;
+	double	fractional;
+	double	power;
+	int		sign;
 
-	while (*s && (*s == ' ' || (*s >= 9 && *s <= 13)))
-		s++;
-	if (*s == '-')
-	{
-		sign = -1.0;
-		s++;
-	}
-	else if (*s == '+')
-		s++;
-	while (*s >= '0' && *s <= '9')
-		result = (result * 10) + (*s++ - '0');
+	integral = 0;
+	fractional = 0;
+	sign = 1;
+	power = 1;
+	while (*s == ' ' || (*s >= '\t' && *s <= '\n'))
+		++s;
+	while (*s == '+' || *s == '-')
+		if (*s++ == '-')
+			sign = -sign;
+	while (*s != '.' && *s)
+		integral = (integral * 10) + (*s++ - '0');
 	if (*s == '.')
-		s++;
-	while (*s >= '0' && *s <= '9')
+		++s;
+	while (*s)
 	{
-		fraction = (fraction * 10) + (*s++ - '0');
-		divisor *= 10.0;
+		power /= 10;
+		fractional = fractional + (*s++ - '0') * power;
 	}
-	return (sign * (result + fraction / divisor));
+	return ((integral + fractional) * sign);
 }
 
 t_fractal	square_complex(t_fractal z)

@@ -6,7 +6,7 @@
 #    By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 17:58:52 by bkiskac           #+#    #+#              #
-#    Updated: 2025/01/31 17:16:30 by bkiskac          ###   ########.fr        #
+#    Updated: 2025/01/31 17:35:33 by bkiskac          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,5 +52,8 @@ fclean: clean
 	make clean -C mlx
 
 re: fclean all
+
+norm:
+	norminette fractol.c fractol.h ./src
 
 .PHONY: all clean fclean re
