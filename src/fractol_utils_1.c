@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 15:35:33 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 16:42:18 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ double	ft_atod(char *s)
 	}
 	else if (*s == '+')
 		s++;
-	// parse integral part
 	while (*s >= '0' && *s <= '9')
 		result = (result * 10) + (*s++ - '0');
-	// parse fractional part
 	if (*s == '.')
 		s++;
 	while (*s >= '0' && *s <= '9')

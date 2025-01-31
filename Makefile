@@ -6,7 +6,7 @@
 #    By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 17:58:52 by bkiskac           #+#    #+#              #
-#    Updated: 2025/01/30 21:53:01 by bkiskac          ###   ########.fr        #
+#    Updated: 2025/01/31 16:40:30 by bkiskac          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 CC = cc
 
-CFLAGS = -g
+CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -lm -lX11 -lXext
 
 SRCS = fractol.c \
@@ -51,6 +51,6 @@ fclean: clean
 	make fclean -C libft
 	make fclean -C mlx
 
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re
