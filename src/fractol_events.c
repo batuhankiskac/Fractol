@@ -6,24 +6,26 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:30:17 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 20:20:24 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 15:35:33 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-static int	julia_track(int button, int x, int y, t_fractal *fract)
+static int julia_track(int button, int x, int y, t_fractal *fractal)
 {
 	if (button == Button1 || button == Button3)
 	{
-		fract->julia_real = (map((t_map){x, -2 , +2, 0, WIDTH}) * fract->zoom) + fract->shift_real;
-		fract->julia_i = (map((t_map){y, +2 , -2, 0, HEIGHT}) * fract->zoom) + fract->shift_i;
-		fractol_render(fract);
+		fractal->julia_real = (map((t_map){x, -2, +2, 0, WIDTH}) * fractal->zoom)
+			+ fractal->shift_real;
+		fractal->julia_i = (map((t_map){y, +2, -2, 0, HEIGHT}) * fractal->zoom)
+			+ fractal->shift_i;
+		fractol_render(fractal);
 	}
 	return (0);
 }
 
-int	handle_key(int keysym, t_fractal *fractal)
+int handle_key(int keysym, t_fractal *fractal)
 {
 	if (keysym == XK_Escape)
 		handle_close(fractal);
@@ -45,13 +47,12 @@ int	handle_key(int keysym, t_fractal *fractal)
 	return (0);
 }
 
-int	handle_mouse(int button, int x, int y, t_fractal *fractal)
+int handle_mouse(int button, int x, int y, t_fractal *fractal)
 {
-	double	mouse_real;
-	double	mouse_i;
-
-	mouse_real = (x - WIDTH / 2) / (0.5 * WIDTH * fractal->zoom) + fractal->shift_real;
-	mouse_i = (y - HEIGHT / 2) / (0.5 * HEIGHT * fractal->zoom) + fractal->shift_i;
+	double mouse_real = (x - WIDTH / 2) / (0.5 * WIDTH * fractal->zoom)
+		+ fractal->shift_real;
+	double mouse_i = (y - HEIGHT / 2) / (0.5 * HEIGHT * fractal->zoom)
+		+ fractal->shift_i;
 	if (!ft_strncmp(fractal->title, "Julia", 5))
 		julia_track(button, x, y, fractal);
 	if (button == Button4)
@@ -62,7 +63,7 @@ int	handle_mouse(int button, int x, int y, t_fractal *fractal)
 	return (0);
 }
 
-int	handle_close(t_fractal *fractal)
+int handle_close(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx, fractal->img);
 	mlx_destroy_window(fractal->mlx, fractal->win);

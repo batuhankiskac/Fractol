@@ -6,7 +6,7 @@
 #    By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/25 17:58:52 by bkiskac           #+#    #+#              #
-#    Updated: 2025/01/30 11:40:58 by bkiskac          ###   ########.fr        #
+#    Updated: 2025/01/30 21:53:01 by bkiskac          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g
 MLXFLAGS = -lm -lX11 -lXext
 
 SRCS = fractol.c \
@@ -33,7 +33,7 @@ MLX = mlx/libmlx.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(MLX)
-	$(CC) $(CFLAGS) $(MLXFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(MLX)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(MLX) $(MLXFLAGS)
 
 $(LIBFT):
 	make -C libft

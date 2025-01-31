@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:27:01 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 16:25:34 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 15:35:33 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ static void	create_window(t_fractal *fractal)
 
 static void	create_image(t_fractal *fractal)
 {
-	fractal->win = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
-	if (!fractal->win)
+	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
+	if (!fractal->img)
 	{
 		mlx_destroy_window(fractal->mlx, fractal->win);
 		mlx_destroy_display(fractal->mlx);
 		free(fractal->mlx);
 		malloc_error();
 	}
-	fractal->addr = mlx_get_data_addr(fractal->img, &fractal->img_bpp, &fractal->img_line, &fractal->img_endian);
+	fractal->addr = mlx_get_data_addr(fractal->img, &fractal->img_bpp,
+		&fractal->img_line, &fractal->img_endian);
 }
 
 void	fractol_init(t_fractal *fractal)

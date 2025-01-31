@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/27 17:19:01 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 15:35:33 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,32 @@ void	malloc_error(void)
 
 double	ft_atod(char *s)
 {
-	long	integral;
-	double	fractional;
-	double	power;
-	int		sign;
+	double sign = 1.0;
+	double result = 0.0;
+	double fraction = 0.0;
+	double divisor = 1.0;
 
-	integral = 0;
-	fractional = 0.0;
-	sign = 1;
-	power = 1.0;
-	while (*s == '0' || (*s >= 9) && (*s <= 12))
-		*s++;
-	while (*s == '+' || *s == '-')
-		if (*s == '-')
-			sign *= -1;
-	while (*s && *s != '.')
-		integral = integral * 10 + (*s++ - '0');
-	if (*s == '.')
-		*s++;
-	while (*s)
+	while (*s && (*s == ' ' || (*s >= 9 && *s <= 13)))
+		s++;
+	if (*s == '-')
 	{
-		power /= 10;
-		fractional = fractional + (*s++ - '0') * power;
+		sign = -1.0;
+		s++;
 	}
-	return ((integral + fractional) * sign);
+	else if (*s == '+')
+		s++;
+	// parse integral part
+	while (*s >= '0' && *s <= '9')
+		result = (result * 10) + (*s++ - '0');
+	// parse fractional part
+	if (*s == '.')
+		s++;
+	while (*s >= '0' && *s <= '9')
+	{
+		fraction = (fraction * 10) + (*s++ - '0');
+		divisor *= 10.0;
+	}
+	return (sign * (result + fraction / divisor));
 }
 
 t_fractal	square_complex(t_fractal z)
@@ -71,7 +73,7 @@ t_fractal	square_complex(t_fractal z)
 t_fractal	sum_complex(t_fractal z1, t_fractal z2)
 {
 	t_fractal	res;
-	
+
 	res.compl_real = z1.compl_real + z2.compl_real;
 	res.compl_i = z1.compl_i + z2.compl_i;
 	return (res);
