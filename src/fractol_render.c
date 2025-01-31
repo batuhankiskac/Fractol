@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:22:00 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 17:20:43 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 17:30:10 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,19 @@ static void	get_complex_map(int x, int y, t_fractal *fract)
 	int			rgb;
 
 	i = -1;
-	z.compl_real = (map((t_map){x, -2, +2, 0, WIDTH}) * fract->zoom) + fract->shift_real;
-	z.compl_i = (map((t_map){y, +2, -2, 0, HEIGHT}) * fract->zoom) + fract->shift_i;
+	z.compl_real = (map((t_map){x, -2, +2, 0, WIDTH})
+			* fract->zoom) + fract->shift_real;
+	z.compl_i = (map((t_map){y, +2, -2, 0, HEIGHT})
+			* fract->zoom) + fract->shift_i;
 	fractol_set(&z, &c, fract);
 	while (++i < fract->iterations)
 	{
 		z = sum_complex(square_complex(z), c);
-		if ((z.compl_real * z.compl_real + z.compl_i * z.compl_i) > fract->hypotenuse)
+		if ((z.compl_real * z.compl_real + z.compl_i
+				* z.compl_i) > fract->hypotenuse)
 		{
-			rgb = blend_colors(BLACK, fract->color, (double)i / fract->iterations);
+			rgb = blend_colors(BLACK, fract->color,
+					(double)i / fract->iterations);
 			ft_pixel_put(x, y, fract, rgb);
 			return ;
 		}
