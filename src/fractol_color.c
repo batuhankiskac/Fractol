@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:45:00 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 17:22:08 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 17:28:23 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	blend_colors(int color1, int color2, double t)
 	r = (int)(r + (255 - r) * t * 1.5);
 	g = (int)(g + (255 - g) * t * 0.2);
 	b = (int)(b + (255 - b) * t * 4);
-	return (r << 16) | (g << 8) | b;
+	return ((r << 16) | (g << 8) | b);
 }
 
 void	color_shift(t_fractal *fractal)

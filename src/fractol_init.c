@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:27:01 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 17:20:11 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/01/31 17:28:37 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	create_image(t_fractal *fractal)
 		malloc_error();
 	}
 	fractal->addr = mlx_get_data_addr(fractal->img, &fractal->img_bpp,
-		&fractal->img_line, &fractal->img_endian);
+			&fractal->img_line, &fractal->img_endian);
 }
 
 void	fractol_init(t_fractal *fractal)
