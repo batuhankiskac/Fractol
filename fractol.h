@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 17:46:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 22:17:01 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/02/04 20:29:02 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 
-# define WIDTH 1300
-# define HEIGHT 1300
+# define WIDTH 1000
+# define HEIGHT 1000
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
