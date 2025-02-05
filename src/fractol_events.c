@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:30:17 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 17:24:47 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/02/05 20:48:17 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	handle_key(int keysym, t_fractal *fract)
 		fract->shift_i += (0.1 * fract->zoom);
 	else if (keysym == XK_Down || keysym == XK_s)
 		fract->shift_i -= (0.1 * fract->zoom);
-	else if (keysym == XK_KP_Add)
+	else if (keysym == XK_m)
 		fract->iterations += 32;
-	else if (keysym == XK_KP_Subtract)
+	else if (keysym == XK_n)
 		fract->iterations -= 32;
 	else if (keysym == XK_space)
 		color_shift(fract);

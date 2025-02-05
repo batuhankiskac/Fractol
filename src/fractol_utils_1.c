@@ -6,7 +6,7 @@
 /*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:08:51 by bkiskac           #+#    #+#             */
-/*   Updated: 2025/01/31 17:34:22 by bkiskac          ###   ########.fr       */
+/*   Updated: 2025/02/05 20:48:36 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	instruction(void)
 	ft_printf("To move the fractal, use the arrow keys or WASD\n");
 	ft_printf("To zoom in and out, use the mouse wheel\n");
 	ft_printf("To change the color, use space key\n");
-	ft_printf("To change the iterations, use the + and - keys\n");
+	ft_printf("To change the iterations, use the m and n keys\n");
 	ft_printf("To rotate the Julia, use left or right mouse button\n");
 	ft_printf("To quit, use the ESC key or simply click X on the window\n");
 	ft_printf("Example Julia Sets:\n");
